@@ -22,13 +22,12 @@ from sklearn.metrics import mean_squared_error as MSE
 best_model = grid_rf.best_estimator_
 
 # Predict test set labels
-y_pred = grid_rf.predict(X_test)
+y_pred = best_model.predict(X_test)
 
 # Compute rmse_test
-rmse_test = MSE(y_test,y_pred) ** (1/2)
+rmse_test = MSE(y_test, y_pred)**(1/2)
 
 # Print rmse_test
 print('Test RMSE of best model: {:.3f}'.format(rmse_test)) 
-
 
 #Test RMSE of best model: 50.569
